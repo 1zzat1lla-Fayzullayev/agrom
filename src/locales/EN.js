@@ -45,8 +45,11 @@ export const en = {
   address:
     "UZBEKISTAN, SURKHANDARYA REGION, KUMKURGAN DISTRICT, MAHALLA «BOGARO»",
 
-  welcomeDesc:
-    "«Welcome to the web page of our Company! Here you will find detailed information about our activities. We will also provide you with the necessary and up-to-date information on the production and supply of products.»",
+  welcomeDesc: "Welcome to the web page of our Company! Here you will find detailed information about our activities. We will also provide you with the necessary and up-to-date information on the production and supply of products.",
+  welcomeDesc1: "Welcome to the web page of our Company!",
+  welcomeDesc2: "Here you will find detailed information about our activities.",
+  welcomeDesc3: "We will also provide you with the necessary and up-to-date",
+  welcomeDesc4: "information on the production and supply of products.",
 
   welcomeSubDesc: "Founder, Dr. Pulatov R.",
   dehydrationTitle: "DEHYDRATION OF VEGETABLES AND FRUITS",

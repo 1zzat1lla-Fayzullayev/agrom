@@ -44,8 +44,11 @@ export const gr = {
   more: "Mehr Details",
   address: "USBEKISTAN, SURKHANDARYA-REGION, KUMKURGAN-DISTRIKT, MAHALLA «BOGARO»",
 
-  welcomeDesc:
-    "«Willkommen auf der Webseite unseres Unternehmens! Hier finden Sie ausführliche Informationen zu unseren Aktivitäten. Wir werden Ihnen auch die notwendigen und aktuellen Informationen zur Produktion und Lieferung von Produkten zur Verfügung stellen.»",
+  welcomeDesc: "Willkommen auf unserer Unternehmenswebsite! Hier finden Sie detaillierte Informationen über unsere Aktivitäten. Wir werden Sie auch mit den notwendigen und aktuellen Informationen über die Produktion und die Lieferung der Produkte versorgen.",
+  welcomeDesc1: "Willkommen auf unserer Unternehmenswebsite!",
+  welcomeDesc2: "Hier finden Sie detaillierte Informationen über unsere Aktivitäten.",
+  welcomeDesc3: "Wir werden Sie auch mit den notwendigen und aktuellen Informationen",
+  welcomeDesc4: "über die Produktion und die Lieferung der Produkte versorgen.",
 
   welcomeSubDesc: "Gründer, Dr. Pulatov R.",
   dehydrationTitle: "ENTWÄSSERUNG VON OBST UND GEMÜSE",
