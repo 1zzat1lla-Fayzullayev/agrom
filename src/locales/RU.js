@@ -755,5 +755,13 @@ export const ru = {
   investTitle6: "Как стать инвестором",
   investDesc61: "Присоединяйтесь к нам в создании будущего пищевой индустрии! Инвестируйте в нашу компанию, и мы вместе сделаем следующий шаг в развитии промышленности, и приносить пользу людям и окружающей среде.",
 
+
+  contactFormHeading: "Связаться с нами",
+  contactFormInputName: "Ваше имя",
+  contactFormInputEmail: "Электронная почта",
+  contactFormPhoneNumber: "Ваш телефон",
+  contactFormMessage: "Сообщение",
+  contactFormButton: "Отправить",
+
   downloadPres: "Скачать презентацию ",
 };

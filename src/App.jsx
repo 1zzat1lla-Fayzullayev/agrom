@@ -1,5 +1,6 @@
 import AboutAgrofeed from "./components/AboutAgrofeed";
 import AboutAgroprocess from "./components/AboutAgroprocess";
+import ContactForm from "./components/ContactForm";
 import Dehydration from "./components/Dehydration";
 import FeedandProcess from "./components/FeedandProcess";
 import Header from "./components/Header";
@@ -17,6 +18,7 @@ const App = () => {
         <AboutAgrofeed/>
         <MainIcons/>
         <FeedandProcess/>
+        <ContactForm />
       </div>
     </>
   );
