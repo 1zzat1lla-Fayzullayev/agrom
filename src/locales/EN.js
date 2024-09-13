@@ -712,4 +712,12 @@ Line capacity: processing of vegetables and fruits up to 240 tons per day.`,
   driedtikvaDesc8: "Proteins - 1 g, Fats - 0.1 g, Carbohydrates - 4.4 g",
   driedtikvaDesc9: "Energy value kcal/kJ:",
   driedtikvaDesc10: "22 kcal",
+
+  contactFormHeading: "Contact Us",
+  contactFormInputName: "Your Name",
+  contactFormInputEmail: "Email",
+  contactFormPhoneNumber: "Your Phone",
+  contactFormMessage: "Message",
+  contactFormButton: "Send",
+
 };

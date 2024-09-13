@@ -713,4 +713,12 @@ Anlagenkapazität: Verarbeitung von Obst und Gemüse bis zu 240 Tonnen pro Tag.`
   driedtikvaDesc9: "Energiewert kcal/kJ:",
   driedtikvaDesc10: "22 kcal",
 
+
+  contactFormHeading: "Kontaktieren Sie uns",
+  contactFormInputName: "Ihr Name",
+  contactFormInputEmail: "E-Mail",
+  contactFormPhoneNumber: "Ihre Telefonnummer",
+  contactFormMessage: "Nachricht",
+  contactFormButton: "Absenden",
+
 };

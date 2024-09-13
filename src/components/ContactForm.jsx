@@ -1,10 +1,10 @@
-/* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import InputMask from "react-input-mask";
 import { getText } from "../locales";
+import "aos/dist/aos.css"; 
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -55,10 +55,10 @@ const ContactForm = () => {
     <div className="contactForm mt-5">
       <div className="container">
         <div className="form-wrapper">
-          <form onSubmit={sendFeedback}>
-            <h3>{getText("contactFormHeading")}</h3>
+          <form onSubmit={sendFeedback} data-aos="fade-up">
+            <h3 data-aos="zoom-in">{getText("contactFormHeading")}</h3>
 
-            <div className="row">
+            <div className="row" data-aos="fade-right">
               <div className="twoInput">
                 <div className="inputWrap">
                   <InputMask
@@ -68,6 +68,7 @@ const ContactForm = () => {
                     className="form-control"
                     name="name"
                     required
+                    data-aos="fade-left"
                   />
                 </div>
 
@@ -80,11 +81,12 @@ const ContactForm = () => {
                     className="form-control"
                     name="phone"
                     required
+                    data-aos="fade-left"
                   />
                 </div>
               </div>
 
-              <div className="inputWrap">
+              <div className="inputWrap" data-aos="fade-up">
                 <InputMask
                   placeholder={getText("contactFormInputEmail")}
                   value={email}
@@ -96,7 +98,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="inputWrap">
+            <div className="inputWrap" data-aos="fade-up">
               <textarea
                 placeholder={getText("contactFormMessage")}
                 value={description}
@@ -107,7 +109,12 @@ const ContactForm = () => {
               />
             </div>
 
-            <button type="submit" className="btn" disabled={isLoading}>
+            <button
+              type="submit"
+              className="btn"
+              disabled={isLoading}
+              data-aos="zoom-in"
+            >
               {isLoading ? (
                 <span className="spinner-border-sm spinner-border ms-2"></span>
               ) : (
