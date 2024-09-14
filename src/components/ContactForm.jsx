@@ -132,6 +132,7 @@ const ContactForm = () => {
               className="btn"
               disabled={isLoading}
               data-aos="zoom-in"
+              style={{color: "white"}}
             >
               {isLoading ? (
                 <span className="spinner-border-sm spinner-border ms-2"></span>
