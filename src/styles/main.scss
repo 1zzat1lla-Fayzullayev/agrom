@@ -1642,11 +1642,109 @@ body {
   margin-bottom: 50px;
   text-align: center;
   width: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(0, 0, 0, 0.089);
   padding: 40px;
+  max-width: 800px;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
+
+  .twoInput {
+    width: 100%;
+    .floating-label {
+      width: 100%;
+    }
+  }
+
+  h3 {
+    color: #1f2645;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  }
+
+  .floating-label {
+    position: relative;
+    margin-bottom: 20px;
+
+    .form-control {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 16px;
+      border: 2px solid transparent;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      color: #1f2645;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      // box-shadow: 0 4px 12px rgba(8, 8, 8, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.089);
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: #56b259;
+    }
+
+    label {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.418);
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .form-control:focus + label,
+    .form-control:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 16px;
+      font-size: 12px;
+      color: #56b259;
+      background: white;
+      padding: 0 5px;
+      border-radius: 4px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: transparent;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+
+  button {
+    background-color: #56b259;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #4e46e0;
+    box-shadow: 0 6px 16px rgba(108, 99, 255, 0.5);
+  }
+
+  button:disabled {
+    background-color: rgba(108, 99, 255, 0.6);
+    cursor: not-allowed;
+  }
 }
 
 h3 {
@@ -1679,9 +1777,8 @@ h3 {
 }
 
 .form-control:focus {
-  border-color: #56b259;
   outline: none;
-  box-shadow: 0 0 0 4px rgba(86, 178, 89, 0.2);
+  box-shadow: 0 0 0 4px rgba(86, 178, 89, 0);
 }
 
 .twoInput {
@@ -1731,4 +1828,3 @@ h3 {
     font-size: 1.5rem;
   }
 }
-

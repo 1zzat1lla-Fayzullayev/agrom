@@ -1,21 +1,22 @@
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import InputMask from "react-input-mask";
 import { getText } from "../locales";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("+998 (__) ___-__-__");
+  const [phone, setPhone] = useState("");
+  const [phonePlaceholder, setPhonePlaceholder] = useState(
+    "+998 (__) ___-__-__"
+  );
   const [email, setEmail] = useState("");
-  const [service, setService] = useState("");
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const TOKEN = "6595677829:AAGkeV8LwYLNGNjsu8xus7o6gkFkOhvp1sQ";
-  const USERID = "-1002173244569";
+  const TOKEN = "7322958889:AAHnCtMFtt1phqN3p1eIspJazUD066PcOdU";
+  const USERID = "-1002384987886";
 
   const encodeText = (text) => encodeURIComponent(text);
 
@@ -23,9 +24,9 @@ const ContactForm = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const text = `Name: ${name}\nMessage: ${description}\nPhone number: ${phone}\nEmail: ${
-      email.length === 0 ? "Email is empty" : email
-    }\n Services: ${service}`;
+    const text = `Name: ${name}\nMessage: ${description}\nPhone number: ${
+      phone ? phone : "Phone number is empty"
+    }\nEmail: ${email.length === 0 ? "Email is empty" : email}\n`;
 
     try {
       await axios.post(
@@ -39,16 +40,27 @@ const ContactForm = () => {
     } finally {
       setIsLoading(false);
       setName("");
-      setPhone("+998 (__) ___-__-__");
+      setPhone("");
+      setPhonePlaceholder("+998 (__) ___-__-__");
       setEmail("");
       setDescription("");
-      setService("");
     }
   };
 
   const handlePhoneChange = (e) => {
-    const cleaned = e.target.value.replace(/[^+\d]/g, "");
-    setPhone(cleaned);
+    setPhone(e.target.value);
+  };
+
+  const handlePhoneFocus = () => {
+    if (!phone) {
+      setPhonePlaceholder("");
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    if (!phone) {
+      setPhonePlaceholder("+998 (__) ___-__-__");
+    }
   };
 
   return (
@@ -60,7 +72,7 @@ const ContactForm = () => {
 
             <div className="row" data-aos="fade-right">
               <div className="twoInput">
-                <div className="inputWrap">
+                <div className="floating-label">
                   <InputMask
                     placeholder={getText("contactFormInputName")}
                     value={name}
@@ -70,23 +82,27 @@ const ContactForm = () => {
                     required
                     data-aos="fade-left"
                   />
+                  <label>{getText("contactFormInputName")}</label>
                 </div>
 
-                <div className="inputWrap">
+                <div className="floating-label">
                   <InputMask
-                    placeholder={getText("contactFormPhoneNumber")}
+                    placeholder={phonePlaceholder}
                     value={phone}
                     onChange={handlePhoneChange}
+                    onFocus={handlePhoneFocus}
+                    onBlur={handlePhoneBlur}
                     mask="+999 (99) 999-99-99"
                     className="form-control"
                     name="phone"
                     required
                     data-aos="fade-left"
                   />
+                  <label>{getText("contactFormPhoneNumber")}</label>
                 </div>
               </div>
 
-              <div className="inputWrap" data-aos="fade-up">
+              <div className="floating-label" data-aos="fade-up">
                 <InputMask
                   placeholder={getText("contactFormInputEmail")}
                   value={email}
@@ -95,10 +111,11 @@ const ContactForm = () => {
                   name="email"
                   required
                 />
+                <label>{getText("contactFormInputEmail")}</label>
               </div>
             </div>
 
-            <div className="inputWrap" data-aos="fade-up">
+            <div className="floating-label" data-aos="fade-up">
               <textarea
                 placeholder={getText("contactFormMessage")}
                 value={description}
@@ -107,6 +124,7 @@ const ContactForm = () => {
                 name="message"
                 required
               />
+              <label>{getText("contactFormMessage")}</label>
             </div>
 
             <button
@@ -121,8 +139,6 @@ const ContactForm = () => {
                 <span>{getText("contactFormButton")}</span>
               )}
             </button>
-
-            <ToastContainer />
           </form>
         </div>
       </div>

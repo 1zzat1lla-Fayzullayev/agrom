@@ -24,13 +24,13 @@ import DriedFruits from "./pages/DriedFruits.jsx";
 import Yabloko from "./pages/fruits/Yabloko.jsx";
 import Hurma from "./pages/fruits/Hurma.jsx";
 import TomatnayaPasta from "./pages/pures/TomatnayaPasta.jsx";
-import AbrikosovoePure from './pages/pures/AbrikosovoePure';
-import MorkovnoePure from './pages/pures/MorkovnoePure';
-import PersikovoePure from './pages/pures/PersikovoePure';
-import SlivovoePure from './pages/pures/SlivovoePure';
-import SvekolnoePure from './pages/pures/SvekolnoePure';
-import TikvennoePure from './pages/pures/TikvennoePure';
-import YablochnoePure from './pages/pures/YablochnoePure';
+import AbrikosovoePure from "./pages/pures/AbrikosovoePure";
+import MorkovnoePure from "./pages/pures/MorkovnoePure";
+import PersikovoePure from "./pages/pures/PersikovoePure";
+import SlivovoePure from "./pages/pures/SlivovoePure";
+import SvekolnoePure from "./pages/pures/SvekolnoePure";
+import TikvennoePure from "./pages/pures/TikvennoePure";
+import YablochnoePure from "./pages/pures/YablochnoePure";
 import Baklajan from "./pages/vegetables/Baklajan.jsx";
 import Ukrop from "./pages/vegetables/Ukrop.jsx";
 import Tikva from "./pages/vegetables/Tikva.jsx";
@@ -44,7 +44,8 @@ import Luk from "./pages/vegetables/Luk.jsx";
 import Kapusta from "./pages/vegetables/Kapusta.jsx";
 import Bolgarskiy from "./pages/vegetables/Bolgarskiy.jsx";
 import Icons from "./components/Icons.jsx";
-
+import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
@@ -59,40 +60,133 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/contacts" exact element={<Contacts />} />
 
       <Route path="/produkciya" exact element={<Produkciya />} />
-      <Route path="/produkciya/koncentraty-pyure" exact element={<ConcentratesandPure />} />
-      <Route path="/produkciya/koncentraty-pyure/tomatnaya" exact element={<TomatnayaPasta />} />
-      <Route path="/produkciya/koncentraty-pyure/abrikosovoe" exact element={<AbrikosovoePure />} />
-      <Route path="/produkciya/koncentraty-pyure/morkovnoe" exact element={<MorkovnoePure />} />
-      <Route path="/produkciya/koncentraty-pyure/persikovoe" exact element={<PersikovoePure />} />
-      <Route path="/produkciya/koncentraty-pyure/slivovoe" exact element={<SlivovoePure />} />
-      <Route path="/produkciya/koncentraty-pyure/svekolnoe" exact element={<SvekolnoePure />} />
-      <Route path="/produkciya/koncentraty-pyure/tikvennoe" exact element={<TikvennoePure />} />
-      <Route path="/produkciya/koncentraty-pyure/yablochnoe" exact element={<YablochnoePure />} />
+      <Route
+        path="/produkciya/koncentraty-pyure"
+        exact
+        element={<ConcentratesandPure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/tomatnaya"
+        exact
+        element={<TomatnayaPasta />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/abrikosovoe"
+        exact
+        element={<AbrikosovoePure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/morkovnoe"
+        exact
+        element={<MorkovnoePure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/persikovoe"
+        exact
+        element={<PersikovoePure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/slivovoe"
+        exact
+        element={<SlivovoePure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/svekolnoe"
+        exact
+        element={<SvekolnoePure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/tikvennoe"
+        exact
+        element={<TikvennoePure />}
+      />
+      <Route
+        path="/produkciya/koncentraty-pyure/yablochnoe"
+        exact
+        element={<YablochnoePure />}
+      />
 
-
-      <Route path="/produkciya/dried-vegetables" exact element={<DriedVegetables />} />
-      <Route path="/produkciya/dried-vegetables/baklajan" exact element={<Baklajan />} />
-      <Route path="/produkciya/dried-vegetables/bolgarskiy" exact element={<Bolgarskiy />} />
-      <Route path="/produkciya/dried-vegetables/kapusta" exact element={<Kapusta />} />
+      <Route
+        path="/produkciya/dried-vegetables"
+        exact
+        element={<DriedVegetables />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/baklajan"
+        exact
+        element={<Baklajan />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/bolgarskiy"
+        exact
+        element={<Bolgarskiy />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/kapusta"
+        exact
+        element={<Kapusta />}
+      />
       <Route path="/produkciya/dried-vegetables/luk" exact element={<Luk />} />
-      <Route path="/produkciya/dried-vegetables/lukzeleniy" exact element={<LukZeleniy />} />
-      <Route path="/produkciya/dried-vegetables/morkov" exact element={<Morkov />} />
-      <Route path="/produkciya/dried-vegetables/perec" exact element={<Perec />} />
-      <Route path="/produkciya/dried-vegetables/petrushka" exact element={<Petrushka />} />
-      <Route path="/produkciya/dried-vegetables/pomidor" exact element={<Pomidor />} />
-      <Route path="/produkciya/dried-vegetables/svekla" exact element={<Svekla />} />
-      <Route path="/produkciya/dried-vegetables/tikva" exact element={<Tikva />} />
-      <Route path="/produkciya/dried-vegetables/ukrop" exact element={<Ukrop />} />
-
+      <Route
+        path="/produkciya/dried-vegetables/lukzeleniy"
+        exact
+        element={<LukZeleniy />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/morkov"
+        exact
+        element={<Morkov />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/perec"
+        exact
+        element={<Perec />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/petrushka"
+        exact
+        element={<Petrushka />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/pomidor"
+        exact
+        element={<Pomidor />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/svekla"
+        exact
+        element={<Svekla />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/tikva"
+        exact
+        element={<Tikva />}
+      />
+      <Route
+        path="/produkciya/dried-vegetables/ukrop"
+        exact
+        element={<Ukrop />}
+      />
 
       <Route path="/produkciya/dried-fruits" exact element={<DriedFruits />} />
-      <Route path="/produkciya/dried-fruits/yabloko" exact element={<Yabloko />} />
+      <Route
+        path="/produkciya/dried-fruits/yabloko"
+        exact
+        element={<Yabloko />}
+      />
       <Route path="/produkciya/dried-fruits/hurma" exact element={<Hurma />} />
-
-    
     </Routes>
     <Footer />
     <Up />
-    <Icons/>
+    <Icons />
+    <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            zIndex: 99999,
+          },
+        }}
+      />
   </HashRouter>
 );
