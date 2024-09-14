@@ -1,29 +1,35 @@
-import { useEffect } from "react";
-import AboutAgrofeed from "./components/AboutAgrofeed";
-import AboutAgroprocess from "./components/AboutAgroprocess";
-import ContactForm from "./components/ContactForm";
-import Dehydration from "./components/Dehydration";
-import FeedandProcess from "./components/FeedandProcess";
+import React from "react";
+import { Helmet } from "react-helmet";
 import Header from "./components/Header";
-import MainIcons from "./components/MainIcons";
 import Welcome from "./components/Welcome";
+import Dehydration from "./components/Dehydration";
+import AboutAgroprocess from "./components/AboutAgroprocess";
+import AboutAgrofeed from "./components/AboutAgrofeed";
+import FeedandProcess from "./components/FeedandProcess";
+import ContactForm from "./components/ContactForm";
+import MainIcons from "./components/MainIcons";
 import Aos from "aos";
 import { Toaster } from "react-hot-toast";
-// import toast, { Toaster } from "react-hot-toast";
 
 const App = () => {
-  useEffect(() => {
+  React.useEffect(() => {
     Aos.init({
       duration: 1200,
       once: true,
     });
   }, []);
 
-  // useEffect(() => {
-  //   toast.success("This is a test notification!");
-  // }, []);
   return (
     <>
+      <Helmet>
+        <title>Производитель концентрированных пюре (концентратов), сушеных овощей и фруктов - Agrom</title>
+        <meta name="description" content="Agrom is a leading manufacturer of natural concentrates, dried fruits, and vegetables. Explore our 100% natural products sourced directly from Uzbekistan. Affordable pricing and fast delivery." />
+        <meta name="keywords" content="concentrated puree, dried vegetables, dried fruits, natural products, Uzbekistan, wholesale, tomato paste, apricot puree, dried apples, carrot puree, pumpkin puree, pepper, parsley, dried plums, концентрированное пюре, сушеные овощи, сухофрукты, натуральные продукты, Узбекистан, оптом, томатная паста, абрикосовое пюре, сушеные яблоки, морковное пюре, тыквенное пюре, перец, петрушка, чернослив" />
+        <meta property="og:title" content="Agrom - Натуральные концентраты и сухофрукты" />
+        <meta property="og:description" content="Discover our range of 100% natural dried fruits, vegetables, and concentrated purees from Uzbekistan." />
+        <meta property="og:url" content="https://eduagency.uz/" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <Header />
       <div className="container">
         <Welcome />
@@ -40,7 +46,7 @@ const App = () => {
         toastOptions={{
           style: {
             zIndex: 99999,
-            marginTop: "100px"
+            marginTop: "100px",
           },
         }}
       />

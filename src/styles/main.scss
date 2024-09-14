@@ -1736,15 +1736,6 @@ body {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  button:hover {
-    background-color: #4e46e0;
-    box-shadow: 0 6px 16px rgba(108, 99, 255, 0.5);
-  }
-
-  button:disabled {
-    background-color: rgba(108, 99, 255, 0.6);
-    cursor: not-allowed;
-  }
 }
 
 h3 {

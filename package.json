@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "react-scripts build && node generate-sitemap.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "react-snap"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
@@ -26,6 +27,7 @@
     "react-hot-toast": "^2.4.1",
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^6.21.1",
+    "react-snap": "^1.23.0",
     "react-toastify": "^10.0.5",
     "reactstrap": "^9.2.1",
     "sass": "^1.69.6",
