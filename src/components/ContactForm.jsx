@@ -24,9 +24,8 @@ const ContactForm = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    const text = `Name: ${name}\nMessage: ${description}\nPhone number: ${
-      phone ? phone : "Phone number is empty"
-    }\nEmail: ${email.length === 0 ? "Email is empty" : email}\n`;
+    const text = `Name: ${name}\nMessage: ${description}\nPhone number: ${phone ? phone : "Phone number is empty"
+      }\nEmail: ${email.length === 0 ? "Email is empty" : email}\n`;
 
     try {
       await axios.post(
@@ -67,10 +66,10 @@ const ContactForm = () => {
     <div className="contactForm mt-5">
       <div className="container">
         <div className="form-wrapper">
-          <form onSubmit={sendFeedback} data-aos="fade-up">
-            <h3 data-aos="zoom-in">{getText("contactFormHeading")}</h3>
+          <form onSubmit={sendFeedback}>
+            <h3>{getText("contactFormHeading")}</h3>
 
-            <div className="row" data-aos="fade-right">
+            <div className="row">
               <div className="twoInput">
                 <div className="floating-label">
                   <InputMask
@@ -80,7 +79,6 @@ const ContactForm = () => {
                     className="form-control"
                     name="name"
                     required
-                    data-aos="fade-left"
                   />
                   <label>{getText("contactFormInputName")}</label>
                 </div>
@@ -96,13 +94,12 @@ const ContactForm = () => {
                     className="form-control"
                     name="phone"
                     required
-                    data-aos="fade-left"
                   />
                   <label>{getText("contactFormPhoneNumber")}</label>
                 </div>
               </div>
 
-              <div className="floating-label" data-aos="fade-up">
+              <div className="floating-label">
                 <InputMask
                   placeholder={getText("contactFormInputEmail")}
                   value={email}
@@ -110,12 +107,13 @@ const ContactForm = () => {
                   className="form-control"
                   name="email"
                   required
+                  style={{left: "40px"}}
                 />
-                <label>{getText("contactFormInputEmail")}</label>
+                <label className="email-label">{getText("contactFormInputEmail")}</label>
               </div>
             </div>
 
-            <div className="floating-label" data-aos="fade-up">
+            <div className="floating-label">
               <textarea
                 placeholder={getText("contactFormMessage")}
                 value={description}
@@ -131,8 +129,7 @@ const ContactForm = () => {
               type="submit"
               className="btn"
               disabled={isLoading}
-              data-aos="zoom-in"
-              style={{color: "white"}}
+              style={{ color: "white" }}
             >
               {isLoading ? (
                 <span className="spinner-border-sm spinner-border ms-2"></span>
