@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-const sitemap = require('sitemap');
-const fs = require('fs');
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { createWriteStream } = require('fs');
 
 const sitemapUrls = [
     { url: '/', changefreq: 'daily', priority: 1.0 },
@@ -9,7 +10,6 @@ const sitemapUrls = [
     { url: '/testimonials', changefreq: 'monthly', priority: 0.8 },
     { url: '/invest', changefreq: 'monthly', priority: 0.8 },
     { url: '/contacts', changefreq: 'monthly', priority: 0.8 },
-
     { url: '/produkciya', changefreq: 'weekly', priority: 0.7 },
     { url: '/produkciya/koncentraty-pyure', changefreq: 'weekly', priority: 0.7 },
     { url: '/produkciya/koncentraty-pyure/tomatnaya', changefreq: 'monthly', priority: 0.6 },
@@ -20,7 +20,6 @@ const sitemapUrls = [
     { url: '/produkciya/koncentraty-pyure/svekolnoe', changefreq: 'monthly', priority: 0.6 },
     { url: '/produkciya/koncentraty-pyure/tikvennoe', changefreq: 'monthly', priority: 0.6 },
     { url: '/produkciya/koncentraty-pyure/yablochnoe', changefreq: 'monthly', priority: 0.6 },
-
     { url: '/produkciya/dried-vegetables', changefreq: 'weekly', priority: 0.7 },
     { url: '/produkciya/dried-vegetables/baklajan', changefreq: 'monthly', priority: 0.6 },
     { url: '/produkciya/dried-vegetables/bolgarskiy', changefreq: 'monthly', priority: 0.6 },
@@ -34,17 +33,22 @@ const sitemapUrls = [
     { url: '/produkciya/dried-vegetables/svekla', changefreq: 'monthly', priority: 0.6 },
     { url: '/produkciya/dried-vegetables/tikva', changefreq: 'monthly', priority: 0.6 },
     { url: '/produkciya/dried-vegetables/ukrop', changefreq: 'monthly', priority: 0.6 },
-
     { url: '/produkciya/dried-fruits', changefreq: 'weekly', priority: 0.7 },
     { url: '/produkciya/dried-fruits/yabloko', changefreq: 'monthly', priority: 0.6 },
     { url: '/produkciya/dried-fruits/hurma', changefreq: 'monthly', priority: 0.6 },
 ];
 
+const stream = new SitemapStream({ hostname: 'https://agrom.uz' });
+const writeStream = createWriteStream('./public/siteMap.xml');
 
-const sitemapXML = sitemap.createSitemap({
-    hostname: 'https://agrom.uz/',
-    cacheTime: 600000,
-    urls: sitemapUrls
-}).toString();
+stream.pipe(writeStream);
 
-fs.writeFileSync('./public/siteMap.xml', sitemapXML);
+sitemapUrls.forEach(url => {
+    stream.write(url);
+});
+
+stream.end();
+
+streamToPromise(stream)
+    .then(data => console.log('Sitemap successfully generated'))
+    .catch(err => console.error('Error generating sitemap:', err));
