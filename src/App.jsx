@@ -27,7 +27,7 @@ const App = () => {
         <meta name="keywords" content="concentrated puree, dried vegetables, dried fruits, natural products, Uzbekistan, wholesale, tomato paste, apricot puree, dried apples, carrot puree, pumpkin puree, pepper, parsley, dried plums, концентрированное пюре, сушеные овощи, сухофрукты, натуральные продукты, Узбекистан, оптом, томатная паста, абрикосовое пюре, сушеные яблоки, морковное пюре, тыквенное пюре, перец, петрушка, чернослив" />
         <meta property="og:title" content="Agrom - Натуральные концентраты и сухофрукты" />
         <meta property="og:description" content="Discover our range of 100% natural dried fruits, vegetables, and concentrated purees from Uzbekistan." />
-        <meta property="og:url" content="https://eduagency.uz/" />
+        <meta property="og:url" content="https://agrom.uz/" />
         <meta name="robots" content="index, follow" />
       </Helmet>
       <Header />
